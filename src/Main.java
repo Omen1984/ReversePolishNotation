@@ -10,6 +10,7 @@ public class Main {
         System.out.println("Введите математическую формулу");
 
         String input = scanner.nextLine();
-        
+
+        String[] arrayValues = input.split(" ");
     }
 }
