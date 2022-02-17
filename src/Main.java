@@ -13,4 +13,16 @@ public class Main {
 
         String[] arrayValues = input.split(" ");
     }
+
+    private static boolean checkingForNumber (String value) {
+        Number number;
+
+        try {
+            number = Double.parseDouble(value);
+        } catch (NullPointerException e) {
+            return false;
+        }
+
+        return true;
+    }
 }
