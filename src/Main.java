@@ -21,11 +21,19 @@ public class Main {
                 sign.push(value);
             }
         }
+
+        while (!numbers.isEmpty()) {
+            System.out.print(numbers.poll() + " ");
+        }
+
+        while (!sign.isEmpty()) {
+            System.out.println(sign.pop() + " ");
+        }
+        
     }
 
     private static boolean checkingForNumber (String value) {
         Number number;
-
         try {
             number = Integer.parseInt(value);
             return true;
