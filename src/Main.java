@@ -26,18 +26,27 @@ public class Main {
             System.out.print(numbers.poll() + " ");
         }
 
+        StringBuilder divisionAndMultiplication = new StringBuilder();
+        StringBuilder additionAndSubtraction = new StringBuilder();
+
         while (!sign.isEmpty()) {
-            System.out.println(sign.pop() + " ");
+            if (sign.peek().equals("/") || sign.peek().equals("*")){
+                divisionAndMultiplication.append(sign.pop() + " ");
+            } else {
+                additionAndSubtraction.append(sign.pop() + " ");
+            }
         }
-        
+
+        System.out.print(divisionAndMultiplication.toString());
+        System.out.print(additionAndSubtraction.toString());
+
     }
 
-    private static boolean checkingForNumber (String value) {
-        Number number;
+    private static boolean checkingForNumber(String value) {
         try {
-            number = Integer.parseInt(value);
+            int number = Integer.parseInt(value);
             return true;
-        } catch (NullPointerException e) {
+        } catch (RuntimeException e) {
             return false;
         }
     }
