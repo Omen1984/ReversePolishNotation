@@ -12,17 +12,25 @@ public class Main {
         String input = scanner.nextLine();
 
         String[] arrayValues = input.split(" ");
+
+        for (int i = 0; i < arrayValues.length; i++) {
+            String value = arrayValues[i];
+            if (checkingForNumber(value)) {
+                numbers.offer(Integer.parseInt(value));
+            } else {
+                sign.push(value);
+            }
+        }
     }
 
     private static boolean checkingForNumber (String value) {
         Number number;
 
         try {
-            number = Double.parseDouble(value);
+            number = Integer.parseInt(value);
+            return true;
         } catch (NullPointerException e) {
             return false;
         }
-
-        return true;
     }
 }
